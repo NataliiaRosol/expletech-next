@@ -15,7 +15,7 @@ function ProductDetailsPage({ params }) {
         </Link>
       <div className="p-2 mt-2">
         
-        <h2 className="text-center font-bold text-blue-950">{product.title}</h2>
+        <h2 className="text-center font-bold text-blue-950 lg:text-2xl">{product.title}</h2>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center sm:gap-5">
           
           <div className="">
@@ -24,7 +24,7 @@ function ProductDetailsPage({ params }) {
               width={500}
               height={500}
               alt={product.title}
-              className="py-5"
+              className="py-5 max-h-[500px] object-contain"
             />
           </div>
           <div className="px-3 sm:py-5 sm:max-w-[400px] lg:max-w-[600px]">
