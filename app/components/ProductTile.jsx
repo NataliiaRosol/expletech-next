@@ -7,7 +7,7 @@ function ProductTile({ singleProduct }) {
     <div className="p-3 md:p-6 border border-blue-950 cursor-pointer">
       <div className="overflow-hidden">
         <Image
-          className="object-contain max-w-[260px] max-h-[260px]"
+          className="object-contain max-w-[260px] max-h-[260px] mx-auto"
           src={singleProduct.images[0]}
           alt={singleProduct.title}
           width={260}
@@ -29,6 +29,7 @@ function ProductTile({ singleProduct }) {
 
       <Link
         href={`/${singleProduct.id}`}
+        key={singleProduct.id}
         className="block px-5 mt-3 w-full py-2 rounded-none bg-blue-950 text-white font-bold text-lg text-center"
       >
         View details
