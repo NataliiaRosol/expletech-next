@@ -1,7 +1,13 @@
-import Image from "next/image";
+import ProductListPage from "./components/ProductListPage";
+
 
 export default function Home() {
+  
   return (
-    <h1>Text</h1>
+    <main className="max-w-[1200px] mx-auto">
+      <h1 className="text-center text-2xl font-bold text-blue-950 p-5 md:p-10">Product list page</h1>
+      <ProductListPage />
+    </main>
+    
   );
 }
