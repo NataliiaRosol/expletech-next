@@ -5,12 +5,16 @@ import React, { useContext } from 'react'
 
 
 function CategoryFilter() {
-  const { categories, setSelectedCategory } = useContext(ProductContext);
+  const { categories, setSelectedCategory} = useContext(ProductContext);
+
+    const handleCategorySorted = (e) => {
+      setSelectedCategory(e.target.value)
+    }
 
   return (
     <div className='py-2 lg:py-5 px-3'>
         <select
-          onChange={(e) => setSelectedCategory(e.target.value)}
+          onChange={(e) => handleCategorySorted(e)}
           className="border p-2"
         >
           <option value="All">All Categories</option>
