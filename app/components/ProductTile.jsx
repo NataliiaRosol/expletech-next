@@ -7,7 +7,7 @@ function ProductTile({ singleProduct }) {
     <div className="p-3 md:p-6 border border-blue-950 cursor-pointer">
       <div className="overflow-hidden">
         <Image
-          className="object-contain max-w-[260] max-h-[260]"
+          className="object-contain max-w-[260px] max-h-[260px]"
           src={singleProduct.images[0]}
           alt={singleProduct.title}
           width={260}
