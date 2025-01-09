@@ -161,5 +161,17 @@ export const productsData = [
     "images": [
       "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/1.png"
     ]
-  }
+  },
+  {
+    "id": 16,
+    "title": "Annibale Colombo Table",
+    "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
+    "category": "beauty",
+    "price": 200,
+    "images": [
+      "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",
+      "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/2.png",
+      "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/3.png"
+    ]
+  },
 ]

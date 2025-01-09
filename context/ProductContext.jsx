@@ -9,6 +9,7 @@ export default function ProductContextProvider({ children }) {
   const [filteredProducts, setFilteredProducts] = useState(productsData);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPriceSorting, setSelectedPriceSorting] = useState("");
+  const [searchParam, setSearchParam] = useState("");
 
   const categories = Array.from(
     new Set(productsData.map((product) => product.category))
@@ -16,6 +17,13 @@ export default function ProductContextProvider({ children }) {
 
   useEffect(() => {
     let updatedProducts = [...productsData];
+
+    // Filter by search parameter
+    if (searchParam.trim() !== "") {
+      updatedProducts = updatedProducts.filter((product) =>
+        product.title.toLowerCase().includes(searchParam.toLowerCase())
+      );
+    }
 
     // Filter by category
     if (selectedCategory !== "All") {
@@ -32,7 +40,18 @@ export default function ProductContextProvider({ children }) {
     }
 
     setFilteredProducts(updatedProducts);
-  }, [selectedCategory, selectedPriceSorting, productsData]);
+  }, [searchParam, selectedCategory, selectedPriceSorting, productsData]);
+
+  // useEffect(() => {
+  //   const lowerCasedQuery = searchParam.toLowerCase();
+
+  //   const filtered = productsData.filter(
+  //     (product) =>
+  //       product.title.toLowerCase().includes(lowerCasedQuery)
+  //   );
+
+  //   setFilteredProducts(filtered);
+  // }, [searchParam]);
 
   return (
     <ProductContext.Provider
@@ -45,6 +64,8 @@ export default function ProductContextProvider({ children }) {
         setFilteredProducts,
         selectedPriceSorting,
         setSelectedPriceSorting,
+        searchParam,
+        setSearchParam,
       }}
     >
       {children}
