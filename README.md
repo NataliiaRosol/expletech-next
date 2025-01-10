@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Expletech App
+
+This is a **Next.js 15 project** designed as test task for Expletsch. It includes features such as product listing, category filtering, price sorting, and a search bar.
+
+---
+
+## Features
+
+- **Dynamic Routing**: Supports routes for individual product details.
+- **Filters**: Category-based filtering, price sorting, and search functionality.
+- **Pagination**: Displays products with pagination (5 products per page).
+- **Responsive Design**: Optimized for various devices and screen sizes.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### **Requirements**
+- Node.js (v16 or later)
+- npm or yarn
 
-```bash
+---
+
+### **Installation**
+
+1. Extract the ZIP file
+
+2. Install dependencies:
+
+```` 
+npm install
+
+3. Run the development server:
+````
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open http://localhost:3000 to view the app in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+# Application Testing Instructions
 
-To learn more about Next.js, take a look at the following resources:
+## Overview
+This document provides instructions for testing the application's functionality, including search, sorting, and category filtering features.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Test Cases
 
-## Deploy on Vercel
+### **1. Search Functionality**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Open the application in your browser.
+2. Locate the **search bar** at the top of the page.
+3. Type the word `colombo` into the search field.
+4. Click the **Search** button or press `Enter`.
+5. Verify:
+   - The displayed results match the search term.
+   - Only relevant products are shown.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### **2. Price Sorting**
+
+1. Ensure all products or the search results are displayed.
+2. Locate the **price sorting dropdown** near the top of the page.
+3. Perform the following actions:
+   - Select the option **Low to High** and verify:
+     - Products are sorted in ascending order of price.
+   - Select the option **High to Low** and verify:
+     - Products are sorted in descending order of price.
+
+---
+
+### **3. Category Filtering**
+
+1. Locate the **category filter dropdown** at the top of the page.
+2. Perform the following actions:
+   - Select any category and verify:
+     - Only products from the selected category are displayed.
+   - Navigate through pagination, if applicable, to ensure all filtered results are displayed.
+
+---
+
+### **4. Combination Test Case: Filter and Sort**
+
+1. Select the category **Beauty** from the category filter.
+   - Verify that only products from the Beauty category are displayed.
+2. Sort these filtered products by **Low to High**.
+   - Verify that the filtered products are sorted in ascending order of price.
+3. Change the sorting to **High to Low**.
+   - Verify that the filtered products are now sorted in descending order of price.
+
+---
+
+## Expected Results
+
+1. **Search Functionality**:
+   - Only products containing the term `colombo` should appear in the search results.
+2. **Price Sorting**:
+   - Products should be sorted correctly as per the selected sorting option.
+3. **Category Filtering**:
+   - Only products belonging to the selected category should be displayed.
+4. **Combination**:
+   - Filters and sorting should work seamlessly together, showing accurate and properly sorted results.
