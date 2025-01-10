@@ -10,10 +10,26 @@ export default function ProductContextProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPriceSorting, setSelectedPriceSorting] = useState("");
   const [searchParam, setSearchParam] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const categories = Array.from(
     new Set(productsData.map((product) => product.category))
   );
+
+  const productsPerPage = 6;
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   useEffect(() => {
     let updatedProducts = [...productsData];
@@ -40,18 +56,9 @@ export default function ProductContextProvider({ children }) {
     }
 
     setFilteredProducts(updatedProducts);
+    setCurrentPage(1);
   }, [searchParam, selectedCategory, selectedPriceSorting, productsData]);
 
-  // useEffect(() => {
-  //   const lowerCasedQuery = searchParam.toLowerCase();
-
-  //   const filtered = productsData.filter(
-  //     (product) =>
-  //       product.title.toLowerCase().includes(lowerCasedQuery)
-  //   );
-
-  //   setFilteredProducts(filtered);
-  // }, [searchParam]);
 
   return (
     <ProductContext.Provider
@@ -66,6 +73,11 @@ export default function ProductContextProvider({ children }) {
         setSelectedPriceSorting,
         searchParam,
         setSearchParam,
+        currentPage,
+        setCurrentPage,
+        handlePageChange,
+        currentProducts,
+        totalPages,
       }}
     >
       {children}

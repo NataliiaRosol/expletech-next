@@ -3,7 +3,7 @@ import { ProductContext } from "@/context/ProductContext";
 import React, { useContext, useState } from "react";
 
 function Search() {
-  const { searchParam, setSearchParam } =
+  const { setSearchParam } =
     useContext(ProductContext);
   const [inputValue, setInputValue] = useState("");
 

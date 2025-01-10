@@ -4,9 +4,10 @@ import Link from "next/link";
 import React from "react";
 import backIcon from '@/public/back.png'
 
-function ProductDetailsPage({ params }) {
-  const productId = parseInt(params.id);
-  const product = productsData.find((product) => product.id === productId);
+async  function ProductDetailsPage({ params }) {
+  // const {productId} = await parseInt(params.id);
+  const { id } = await params;
+  const product = productsData.find((product) => product.id === parseInt(id, 10));
 
   return (
     <section className="max-w-[1400px] lg:max-w-[1600px] mx-auto">
