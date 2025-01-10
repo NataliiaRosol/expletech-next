@@ -12,7 +12,7 @@ function CategoryFilter() {
     }
 
   return (
-    <div className='py-2 lg:py-5 px-3'>
+    <div className='md:mt-0 mt-3 py-2 lg:py-5 px-3'>
         <select
           onChange={(e) => handleCategorySorted(e)}
           className="border p-2"

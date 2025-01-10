@@ -15,7 +15,7 @@ function ProductTile({ singleProduct }) {
         />
       </div>
 
-      <h3 className="w-[250px] lg:w-[300px] overflow-hidden text-ellipsis whitespace-nowrap text-lg font-bold text-center mb-2 text-blue-950">
+      <h3 className="w-[250px] xl:w-[300px] overflow-hidden text-ellipsis whitespace-nowrap text-lg font-bold text-center mb-2 text-blue-950">
         {singleProduct.title}
       </h3>
 

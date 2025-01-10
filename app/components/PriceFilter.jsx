@@ -10,7 +10,7 @@ function PriceFilter() {
   };
 
   return (
-    <div className="my-4 flex items-center">
+    <div className="flex items-center my-2 md:my-4 ">
       <p className="pr-2">Price:</p>
       <select onChange={(e) => handlePriceSorting(e)} className="border p-2">
         <option value="not-selected">Not selected</option>
