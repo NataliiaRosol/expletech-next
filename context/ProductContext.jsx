@@ -1,5 +1,6 @@
 "use client";
 import { productsData } from "@/products";
+import { sortProductsByPrice } from "@/utils/priceFilter";
 import { createContext, useEffect, useState } from "react";
 
 export const ProductContext = createContext();
@@ -49,11 +50,7 @@ export default function ProductContextProvider({ children }) {
     }
 
     // Sort by price
-    if (selectedPriceSorting === "low-to-high") {
-      updatedProducts.sort((a, b) => a.price - b.price);
-    } else if (selectedPriceSorting === "high-to-low") {
-      updatedProducts.sort((a, b) => b.price - a.price);
-    }
+    updatedProducts = sortProductsByPrice(updatedProducts, selectedPriceSorting);
 
     setFilteredProducts(updatedProducts);
     setCurrentPage(1);
