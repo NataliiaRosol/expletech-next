@@ -24,7 +24,8 @@ const config: Config = {
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
     "__tests__/**/*.{js,jsx,ts,tsx}",
-    "app/**/*.{js,jsx,ts,tsx}",
+    // "app/**/*.{js,jsx,ts,tsx}",
+    "utils/**/*.{js,jsx,ts,tsx}",
     // "components/**/*.{js,jsx,ts,tsx}"
   ],
 
