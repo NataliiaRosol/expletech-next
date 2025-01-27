@@ -102,3 +102,28 @@ This document provides instructions for testing the application's functionality,
    - Only products belonging to the selected category should be displayed.
 4. **Combination**:
    - Filters and sorting should work seamlessly together, showing accurate and properly sorted results.
+
+
+---
+
+## Testing Utility Functions with Jest
+
+### **Overview**
+
+Utility functions located in the `utils` folder can be tested using **Jest**. Below are the instructions to run these tests.
+
+### **Running Tests**
+
+1. Ensure Jest is installed in the project. If not, install it using:
+````
+npm install jest @testing-library/react --save-dev
+
+2. Locate or create test files. Jest uses the following naming conventions:
+- Files should be named with `.test.js` or `.spec.js`, e.g., `utils.test.js`.
+- Test files should be located either in the same folder as the functions or in a `__tests__` directory.
+
+3. To run the tests, execute the following command:
+````
+npm test
+
+4. Jest will run all the test cases and provide a summary of the results in the terminal.
