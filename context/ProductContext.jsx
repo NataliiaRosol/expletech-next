@@ -1,5 +1,6 @@
 "use client";
 import { productsData } from "@/products";
+import { filterProductsByCategory } from "@/utils/categoryFilter";
 import { sortProductsByPrice } from "@/utils/priceFilter";
 import { createContext, useEffect, useState } from "react";
 
@@ -43,11 +44,7 @@ export default function ProductContextProvider({ children }) {
     }
 
     // Filter by category
-    if (selectedCategory !== "All") {
-      updatedProducts = updatedProducts.filter(
-        (product) => product.category === selectedCategory
-      );
-    }
+    updatedProducts = filterProductsByCategory(updatedProducts, selectedCategory)
 
     // Sort by price
     updatedProducts = sortProductsByPrice(updatedProducts, selectedPriceSorting);
