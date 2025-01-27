@@ -2,6 +2,7 @@
 import { productsData } from "@/products";
 import { filterProductsByCategory } from "@/utils/categoryFilter";
 import { sortProductsByPrice } from "@/utils/priceFilter";
+import { filterBySearch } from "@/utils/filterBySearch";
 import { createContext, useEffect, useState } from "react";
 
 export const ProductContext = createContext();
@@ -37,11 +38,12 @@ export default function ProductContextProvider({ children }) {
     let updatedProducts = [...productsData];
 
     // Filter by search parameter
-    if (searchParam.trim() !== "") {
-      updatedProducts = updatedProducts.filter((product) =>
-        product.title.toLowerCase().includes(searchParam.toLowerCase())
-      );
-    }
+    // if (searchParam.trim() !== "") {
+    //   updatedProducts = updatedProducts.filter((product) =>
+    //     product.title.toLowerCase().includes(searchParam.toLowerCase())
+    //   );
+    // }
+    updatedProducts = filterBySearch(updatedProducts, searchParam);
 
     // Filter by category
     updatedProducts = filterProductsByCategory(updatedProducts, selectedCategory)
